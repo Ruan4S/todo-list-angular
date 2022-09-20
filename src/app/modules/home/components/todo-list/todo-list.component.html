@@ -1,1 +1,24 @@
-<p>todo-list works!</p>
+<section [class.loading]="!taskList.length">
+  <ul>
+    <li *ngFor="let item of taskList; index as i">
+      <input type="checkbox" [(ngModel)]="item.checked" />
+      <input
+        type="text"
+        (keyup)="validationInput(item.task, i)"
+        [(ngModel)]="item.task"
+        [class.checked]="item.checked"
+      />
+
+      <button (click)="deleteItemTaskList(i)">
+        <img src="assets/icon-trash.svg" alt="Trash" />
+      </button>
+    </li>
+  </ul>
+</section>
+<app-todo-input-add-itens
+  (emitItemTask)="setEmitTaskList($event)"
+></app-todo-input-add-itens>
+<app-todo-button-delete-all
+  *ngIf="taskList.length"
+  (click)="deleteAllTaskList()"
+></app-todo-button-delete-all>

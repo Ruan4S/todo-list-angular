@@ -1,1 +1,46 @@
-$a: "";
+// Font
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+
+// Variables
+$primary-color: #af7eeb;
+$secondary-color: #939cbd;
+$tertiary-color: #ffffff;
+
+$primary-background-color: #e3e9ff;
+$secondary-background-color: $tertiary-color;
+$tertiary-background-color: $primary-color;
+
+$primary-text-color: $secondary-color;
+$secondary-text-color: $tertiary-color;
+
+$danger-color: #ff002e;
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: roboto, sans-serif;
+  font-weight: 400;
+}
+
+body {
+  background-color: $primary-background-color;
+}
+
+ul {
+  list-style: none;
+}
+
+textarea:focus,
+input:focus,
+button {
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  width: 350px;
+  margin: 50px auto;
+}
